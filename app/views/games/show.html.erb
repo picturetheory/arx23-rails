@@ -1,0 +1,21 @@
+<h1>Game #<%= @game.id %>: <%= @game.player1 %> vs. <%= @game.player2 %></h1>
+
+<p>Player 1: <%= @game.player1 %></p>
+<p>Score: <%= @game.player1score %></p>
+<p>Player 2: <%= @game.player2 %></p>
+<p>Score: <%= @game.player2score %></p>
+<p><%= @game.datetime %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_game_path(@game) %></li>
+  <li><%= link_to "Destroy", game_path(@game), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+<h2>Cards</h2>
+<%= render @game.cards %>
+
+<h2>Add a card:</h2>
+<%= render 'cards/form' %>

@@ -1,0 +1,57 @@
+<%= form_with model: @game do |form| %>
+  <div>
+    <%= form.label :gameid %><br>
+    <%= form.text_field :gameid %>
+	<% @game.errors.full_messages_for(:gameid).each do |message| %>
+      <div><%= message %></div>
+	<% end %>
+  </div>
+
+  <div>
+    <%= form.label :datetime %><br>
+    <%= form.text_field :datetime %>
+  </div>
+  
+  <div>
+    <%= form.label :player1 %><br>
+    <%= form.text_field :player1 %>
+	<% @game.errors.full_messages_for(:player1).each do |message| %>
+      <div><%= message %></div>
+	<% end %>
+  </div>
+
+  <div>
+    <%= form.label :player1score %><br>
+    <%= form.text_field :player1score %>
+  </div>
+  
+  <div>
+    <%= form.label :player2 %><br>
+    <%= form.text_field :player2 %>
+	<% @game.errors.full_messages_for(:player2).each do |message| %>
+      <div><%= message %></div>
+	<% end %>
+  </div>
+
+  <div>
+    <%= form.label :player2score %><br>
+    <%= form.text_field :player2score %>
+  </div>
+  
+  <div>
+    <%= form.label :activegame %><br>
+    <%= form.check_box :activegame %>
+	<% @game.errors.full_messages_for(:activegame).each do |message| %>
+      <div><%= message %></div>
+	<% end %>
+  </div>
+  
+  <div>
+    <%= form.label :winner %><br>
+    <%= form.text_field :winner %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

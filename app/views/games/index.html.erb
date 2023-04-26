@@ -1,0 +1,23 @@
+<h1>Welcome to Arx23</h1>
+
+<p>Arx23 is the new official card game of the Brotherhood!</p>
+
+<p>An Arx23 deck is made up of 60 cards, distributed across four suits: Flasks, Sabers, Staves, and Coins. Each suit has cards are numbered 1-11, plus a Commander (worth 12), a Knight (worth 13), a Master (worth 14), and an Ace (worth 15). Further updates may add special cards to the deck.</p>
+
+<p>The goal of the game is to have the cards in your hand have a face value totaling 23. On each of your turns, if the face value of your cards is 22 or below, you may choose to either stand (stop drawing cards until the other player stands or busts), or hit (draw another card and allow the other player to take their turn). If the face value of your cards is 23, you will automatically stand. If the face value of your cards is 24 or above, you immediately bust.</p>
+
+<p>Once both players have stood, the player whose hand has the highest face value (and hasn't busted) is the winner. If the players' hands have equal face values, the match is a draw. If one player busts, the other player wins the match.</p>
+
+All games currently active:
+
+<ul>
+  <% @games.each do |game| %>
+    <li>
+	  <a href="/games/<%= game.id %>">
+        <%= game.player1 %> vs. <%= game.player2 %>
+	  </a>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Game", new_game_path %>

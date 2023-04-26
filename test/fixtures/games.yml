@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gameid: 1
+  player1: MyString
+  player2: MyString
+  datetime: 2023-04-15 01:38:59
+
+two:
+  gameid: 1
+  player1: MyString
+  player2: MyString
+  datetime: 2023-04-15 01:38:59
